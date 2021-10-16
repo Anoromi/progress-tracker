@@ -3,12 +3,14 @@
   <div id="content">
     <div v-if="tasks" class="list-container">
       <div>
+        <span class="title-name"> To Do </span>
         <TaskList
           :tasks="tasks.toDo"
           :moveRight="(index) => move(index, tasks?.toDo, tasks?.inProgress)"
         />
       </div>
       <div>
+        <span class="title-name"> In Progress </span>
         <TaskList
           :tasks="tasks.inProgress"
           :moveLeft="(index) => move(index, tasks?.inProgress, tasks?.toDo)"
@@ -16,6 +18,7 @@
         />
       </div>
       <div>
+        <span class="title-name"> Done </span>
         <TaskList
           :tasks="tasks.done"
           :moveLeft="(index) => move(index, tasks?.done, tasks?.inProgress)"
@@ -87,7 +90,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-
 $toolbarsize: 20pt;
 .list-container {
   width: 100%;
@@ -101,6 +103,13 @@ $toolbarsize: 20pt;
 
 .list-container > * {
   display: table-cell;
+}
+
+.title-name {
+    font-size: 30pt;
+    color: #16afaf;
+    margin: auto auto;
+    display: table;
 }
 
 .toolbar {
@@ -132,8 +141,8 @@ html {
   height: 100%;
 }
 
-
-svg, img {
+svg,
+img {
   vertical-align: middle;
 }
 </style>
