@@ -23,6 +23,7 @@
       </div>
     </div>
   </div>
+
   <OptionDialog v-if="dialogVisible" :close="parceAddItem" />
 </template>
 
@@ -87,7 +88,7 @@ export default class App extends Vue {
 
 <style lang="scss">
 
-$toolbarsize: 30pt;
+$toolbarsize: 20pt;
 .list-container {
   width: 100%;
   height: 100%;
@@ -129,5 +130,10 @@ body {
 
 html {
   height: 100%;
+}
+
+
+svg {
+  vertical-align: middle;
 }
 </style>
