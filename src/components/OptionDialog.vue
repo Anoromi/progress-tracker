@@ -22,6 +22,7 @@
           id="description"
           type="text"
           maxlength="300"
+
           v-model="description"
         />
       </div>
@@ -96,7 +97,10 @@ export default class OptionDialog extends Vue.with(Props) {
 
 input,
 textarea {
-  background: rgb(0, 0, 0);
+  background: rgb(19, 30, 48);
+  color: white;
+  border: rgb(34, 144, 148) solid 0.5px;
+  font-size: 25pt;
 }
 
 label {
@@ -107,7 +111,8 @@ label {
   flex: auto;
   resize: none;
   margin-bottom: 10px;
-  padding: 10px 10px;
+  padding: 13px 20px;
+  border-radius: 50px;
 }
 
 #option-buttons {
@@ -122,11 +127,13 @@ label {
 #save-button {
   background: rgb(13, 138, 90);
   cursor: pointer;
+  font-size: 20pt;
 }
 
 #cancel-button {
   background: rgb(163, 63, 63);
   cursor: pointer;
+  font-size: 20pt;
 }
 
 </style>
