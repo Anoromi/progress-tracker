@@ -8,7 +8,10 @@
         <h1>New Item</h1>
       </div>
       <div style="flex: auto; display: flex; flex-direction: column">
-        <label for="title">{{ fullTitle }} </label>
+        <div>
+        <label for="title">Title </label>
+        <f1 id="title-error"> {{ titleAdditionalMessage }}</f1>
+        </div>
         <input
           name="title"
           type="text"
@@ -49,12 +52,9 @@ export default class OptionDialog extends Vue.with(Props) {
   title = "";
   description = "";
   titleAdditionalMessage = "";
-  get fullTitle(): string {
-    return "Title " + this.titleAdditionalMessage;
-  }
 
   checkAndClose(): void {
-    if (this.title == "") this.titleAdditionalMessage = "| nessesary field";
+    if (this.title == "") this.titleAdditionalMessage = "nessesary field";
     else {
       this.close({ title: this.title, description: this.description });
     }
@@ -103,6 +103,12 @@ export default class OptionDialog extends Vue.with(Props) {
 
 #close-icon:hover {
   background: #ffffff15;
+}
+
+#title-error {
+  color: rgb(189, 20, 20);
+  font-size: 1.5em;
+  margin-left: 10px;
 }
 
 input,
