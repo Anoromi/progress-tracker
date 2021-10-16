@@ -1,10 +1,10 @@
 <template>
   <div id="dialog-container">
     <div id="dialog-box">
-      <div id="close-icon" @click="close(undefined)">
-        <CloseIcon :title="'Close'" />
-      </div>
       <div id="new-item-div">
+        <div id="close-icon" @click="close(undefined)">
+          <CloseIcon :title="'Close'" />
+        </div>
         <h1>New Item</h1>
       </div>
       <div style="flex: auto; display: flex; flex-direction: column">
@@ -98,7 +98,7 @@ export default class OptionDialog extends Vue.with(Props) {
   width: fit-content;
   height: fit-content;
   padding: 10px 10px 10px 10px;
-  align-self: flex-end;
+  float: right;
 }
 
 #close-icon:hover {
