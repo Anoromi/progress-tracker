@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="add-item" @click="addItem()">+ Add item</button>
+    <span class="add-item" @click="addItem()">+ Add item</span>
   </div>
 </template>
 
@@ -21,8 +21,11 @@ export default class Toolbar extends Vue.with(Props) {}
   margin-right: 10px;
   color: #2bbcaf;
   font-size: 20pt;
+  cursor:pointer;
 }
 .add-item:hover {
   background: #ffffff0d;
 }
+
+
 </style>

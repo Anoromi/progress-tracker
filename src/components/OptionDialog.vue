@@ -26,8 +26,8 @@
         />
       </div>
       <div id="option-buttons">
-        <button id="cancel-button" @click="close()">Cancel</button>
-        <button id="save-button" @click="close({title, description})">Save</button>
+        <span id="cancel-button" @click="close()">Cancel</span>
+        <span id="save-button" @click="close({title, description})">Save</span>
       </div>
     </div>
   </div>
@@ -121,10 +121,12 @@ label {
 }
 #save-button {
   background: rgb(13, 138, 90);
+  cursor: pointer;
 }
 
 #cancel-button {
   background: rgb(163, 63, 63);
+  cursor: pointer;
 }
 
 </style>

@@ -86,6 +86,8 @@ $vertical-margins: 0px;
   margin: auto 0;
 }
 
+
+
 .toolbar-icon:hover {
   background: rgba(255, 255, 255, 0.116);
 }
