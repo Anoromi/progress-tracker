@@ -1,4 +1,4 @@
-# tst
+# progress-tracker by Andrii Zahorulko
 
 ## Project setup
 ```
