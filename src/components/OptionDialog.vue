@@ -8,7 +8,7 @@
         <h1>New Item</h1>
       </div>
       <div style="flex: auto; display: flex; flex-direction: column">
-        <label for="title">Title</label>
+        <label for="title">{{ fullTitle }} </label>
         <input
           name="title"
           type="text"
@@ -21,14 +21,13 @@
           name="description"
           id="description"
           type="text"
-          maxlength="300"
-
+          maxlength="500"
           v-model="description"
         />
       </div>
       <div id="option-buttons">
         <span id="cancel-button" @click="close()">Cancel</span>
-        <span id="save-button" @click="close({title, description})">Save</span>
+        <span id="save-button" @click="checkAndClose()">Save</span>
       </div>
     </div>
   </div>
@@ -49,18 +48,29 @@ class Props {
 export default class OptionDialog extends Vue.with(Props) {
   title = "";
   description = "";
+  titleAdditionalMessage = "";
+  get fullTitle(): string {
+    return "Title " + this.titleAdditionalMessage;
+  }
+
+  checkAndClose(): void {
+    if (this.title == "") this.titleAdditionalMessage = "| nessesary field";
+    else {
+      this.close({ title: this.title, description: this.description });
+    }
+  }
 }
 </script>
 
 <style>
 #dialog-container {
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background: rgb(0 0 0 / 28%);
-  overflow:auto;
+  overflow: auto;
 }
 #dialog-box {
   color: #fff;
@@ -135,5 +145,4 @@ label {
   cursor: pointer;
   font-size: 20pt;
 }
-
 </style>
