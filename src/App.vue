@@ -133,7 +133,7 @@ html {
 }
 
 
-svg {
+svg, img {
   vertical-align: middle;
 }
 </style>
